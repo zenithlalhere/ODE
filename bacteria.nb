@@ -1,0 +1,9 @@
+Clear[N, r, N0, t];
+eqn = N'[t] == r*N[t];
+N0 = 100; (* Initial number of bacteria *)
+r = 0.1; (* Growth rate *)
+sol = DSolve[{eqn, N[0] == N0}, N[t], t];
+
+Plot[Evaluate[N[t] /. sol], {t, 0, 10}, 
+ PlotLabel -> "Bacterial Culture Growth", 
+ AxesLabel -> {"Time", "Number of Bacteria"}]
