@@ -1,0 +1,9 @@
+
+
+Clear[c0];
+cin = 3;
+V = 28;
+F = 50;
+de1 = D[C[t], t] == (F/V)*(cin - C[t]);
+soln = DSolve[{de1, C[0] == c0}, C[t], t];
+Plot1 = Plot[Evaluate[C[t] /. soln /. c0 -> Range[0, 8]], {t, 0, 10}, PlotRange -> {0, 6}]
