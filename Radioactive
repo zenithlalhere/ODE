@@ -1,0 +1,3 @@
+eqn2 = D[P[t], t] - r * P[t] == 0;
+Sol = DSolve[{eqn2, P[0] == p0}, P[t], t];
+Plot[Evaluate[P[t] /. Sol /. {p0 -> 200, r -> -0.1}], {t, -50, 50}]
